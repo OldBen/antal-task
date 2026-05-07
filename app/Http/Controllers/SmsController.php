@@ -30,7 +30,5 @@ class SmsController extends Controller
         } else {
             return response()->json($responseBody['list']);
         }
-
-        return response()->json($response->json());
     }
 }

@@ -25,10 +25,10 @@ class SendSmsRequest extends FormRequest
     {
         return [
             'from' => ['required', 'string', Rule::in(['Test', '2WAY'])],
-            'to' => ['required', 'string', 'regex:/^[0-9]+$/i', Rule::anyOf(
+            'to' => ['required', 'string', 'regex:/^[0-9]+$/i', Rule::anyOf([
                 ['size:9'],
                 ['size:11', 'starts_with:48']
-            )],
+            ])],
             'message' => ['required', 'string', 'max:160'],
         ];
     }
